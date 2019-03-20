@@ -37,6 +37,7 @@ class Insta_Scrape:
         self.following = 0
         self.posts = 0
         self.user_link = self.insta_url + self.user
+        print('Instance created for: @' + self.user)
 
 
     def search_user(self):
@@ -44,7 +45,6 @@ class Insta_Scrape:
         self.soup = BeautifulSoup(self.req_url, 'html.parser')
         self.data = self.soup.find_all('meta', attrs={'property': 'og:description'})
         self.text = self.data[0].get('content').split()
-        print(self.text)
 
 test = Insta_Scrape("Demig.od")
 
