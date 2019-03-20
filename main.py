@@ -27,16 +27,24 @@ import re
 # print('Posts: ', posts)
 
 class Insta_Scrape:
+
     insta_url = 'https://www.instagram.com/'
 
-    def __init__(self, username, followers, following, posts):
-        
+    # constructor for defining the instance variables
+    def __init__(self, username):
         self.user = username
-        self.followers = followers
-        self.following = following
-        self.posts = posts
+        self.followers = none
+        self.following = none
+        self.posts = none
         self.user_link = insta_url + user
 
 
-    def inst_print_data(self):
-        print(self.user)
+    def search_user(self):
+        self.req_url = ureq.urlopen(self.user_link).read()
+        self.soup = BeautifulSoup(req_url, 'html.parser')
+        self.data = soup.find_all('meta', attrs={'property': 'og:description'})
+        self.text = data[0].get('content').split()
+
+test = Insta_Scrape("Demig.od")
+
+test.search_user()
