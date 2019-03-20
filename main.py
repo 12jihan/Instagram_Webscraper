@@ -19,12 +19,12 @@ import re
 # posts = text[4]
 
 
-# print('Data: ', text)
-# print('\n*****************\n')
-# print('Username: ', username)
-# print('Followers: ', followers)
-# print('Following: ', following)
-# print('Posts: ', posts)
+print('Data: ', text)
+print('\n*****************\n')
+print('Username: ', username)
+print('Followers: ', followers)
+print('Following: ', following)
+print('Posts: ', posts)
 
 class Insta_Scrape:
 
@@ -45,7 +45,13 @@ class Insta_Scrape:
         self.data = self.soup.find_all('meta', attrs={'property': 'og:description'})
         self.text = self.data[0].get('content').split()
         print(self.text)
+        print('Data: ', text)
+        print('\n*****************\n')
+        print('Username: ', username)
+        print('Followers: ', followers)
+        print('Following: ', following)
+        print('Posts: ', posts)
 
-test = Insta_Scrape("Demig.od")
+test = Insta_Scrape("billybill236")
 
 test.search_user()
