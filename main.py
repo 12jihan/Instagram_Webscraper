@@ -33,17 +33,18 @@ class Insta_Scrape:
     # constructor for defining the instance variables
     def __init__(self, username):
         self.user = username
-        self.followers = none
-        self.following = none
-        self.posts = none
-        self.user_link = insta_url + user
+        self.followers = 0
+        self.following = 0
+        self.posts = 0
+        self.user_link = self.insta_url + self.user
 
 
     def search_user(self):
         self.req_url = ureq.urlopen(self.user_link).read()
-        self.soup = BeautifulSoup(req_url, 'html.parser')
-        self.data = soup.find_all('meta', attrs={'property': 'og:description'})
-        self.text = data[0].get('content').split()
+        self.soup = BeautifulSoup(self.req_url, 'html.parser')
+        self.data = self.soup.find_all('meta', attrs={'property': 'og:description'})
+        self.text = self.data[0].get('content').split()
+        print(self.text)
 
 test = Insta_Scrape("Demig.od")
 
