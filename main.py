@@ -4,8 +4,6 @@ import urllib.parse as uparse
 import urllib.error as uerror
 import requests
 import json
-import ssl
-import re
 
 # user = "demig.od"
 # x = ureq.urlopen('https://www.instagram.com/'+user).read()
@@ -49,7 +47,7 @@ class Insta_Scrape:
         self.followers = self.text[0]
         self.following = self.text[2]
         self.posts = self.text[4]
-        
+
         ##############################
         ##############################
 
@@ -60,6 +58,10 @@ class Insta_Scrape:
         print('Following: ', self.following)
         print('Posts: ', self.posts)
 
-test = Insta_Scrape('demig.od')
+# billybill236
+# demig.od
+# champagnepapi
+inputUser = input('Enter in your insta Username: ')
+test = Insta_Scrape(inputUser)
 
 test.search_user()
