@@ -49,6 +49,7 @@ class Insta_Scrape:
         self.followers = self.text[0]
         self.following = self.text[2]
         self.posts = self.text[4]
+        
         ##############################
         ##############################
 
