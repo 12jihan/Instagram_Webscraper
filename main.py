@@ -19,12 +19,12 @@ import re
 # posts = text[4]
 
 
-print('Data: ', text)
-print('\n*****************\n')
-print('Username: ', username)
-print('Followers: ', followers)
-print('Following: ', following)
-print('Posts: ', posts)
+# print('Data: ', text)
+# print('\n*****************\n')
+# print('Username: ', username)
+# print('Followers: ', followers)
+# print('Following: ', following)
+# print('Posts: ', posts)
 
 class Insta_Scrape:
 
@@ -44,14 +44,21 @@ class Insta_Scrape:
         self.soup = BeautifulSoup(self.req_url, 'html.parser')
         self.data = self.soup.find_all('meta', attrs={'property': 'og:description'})
         self.text = self.data[0].get('content').split()
-        print(self.text)
-        print('Data: ', text)
-        print('\n*****************\n')
-        print('Username: ', username)
-        print('Followers: ', followers)
-        print('Following: ', following)
-        print('Posts: ', posts)
+        
+        self.username = self.text
+        self.followers = self.text[0]
+        self.following = self.text[2]
+        self.posts = self.text[4]
+        ##############################
+        ##############################
 
-test = Insta_Scrape("billybill236")
+        print('Data: ', self.text)
+        print('\n*****************\n')
+        print('Username: ', self.user)
+        print('Followers: ', self.followers)
+        print('Following: ', self.following)
+        print('Posts: ', self.posts)
+
+test = Insta_Scrape('demig.od')
 
 test.search_user()

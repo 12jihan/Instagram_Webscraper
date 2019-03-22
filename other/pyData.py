@@ -2,9 +2,9 @@ import pyrebase
 
 config = {
     "apiKey": "apiKey",
-    "authDomain": "projectId.firebaseapp.com",
-    "databaseURL": "https://databaseName.firebaseio.com",
-    "storageBucket": "projectId.appspot.com",
+    "authDomain": "insta-data-3834d.firebaseapp.com",
+    "databaseURL": "https://instaAcct.firebaseio.com",
+    "storageBucket": "insta-data-3834d.appspot.com",
     "serviceAccount": "path/to/serviceAccountCredentials.json"
 }
 
