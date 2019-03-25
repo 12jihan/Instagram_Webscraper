@@ -15,3 +15,5 @@ Overtime I hope to add more and more app to this but so far this is what I have:
 - make a scheduler for the database
 - create restful api to use the data
 - setup vm in google or azure (which ever will be the cheapest tbh)
+
+## Setup
