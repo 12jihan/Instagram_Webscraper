@@ -18,6 +18,6 @@ Overtime I hope to add more and more app to this but so far this is what I have:
 
 ### Setup:
 1. First make sure that you have pip and pipenv installed on your machine
-2. Use command ```sh $ pipenv install ```  <- this will automatically start installing all the required packages for this app to run
-3. Once installation has finished, go ahead and use what ever method you prefer to use edit/ run your python app. I prefer going into the shell and do what I have to do that way via: ```sh $ pipenv shell ``` and then ```sh $ python main.py ```
+2. Use command ```$ pipenv install ```  <- this will automatically start installing all the required packages for this app to run
+3. Once installation has finished, go ahead and use what ever method you prefer to use edit/ run your python app. I prefer going into the shell and do what I have to do that way via: ```$ pipenv shell ``` and then ```$ python main.py ```
 4. And that's it! Happy Instagraming!!!!!
