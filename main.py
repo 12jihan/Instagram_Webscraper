@@ -39,10 +39,6 @@ class Insta_Scrape:
         self.posts = 0
         self.user_link = self.insta_url + self.user
 
-    def __remCom__(self, input):
-        self.input = input.replace(',', '')
-        return self.input
-
     def search_user(self):
         self.req_url = ureq.urlopen(self.user_link).read()
         self.soup = BeautifulSoup(self.req_url, 'html.parser')
@@ -65,11 +61,16 @@ class Insta_Scrape:
         print('Following: ', self.following)
         print('Posts: ', self.posts)
 
+    def __remCom__(self, input):
+        self.input = input.replace(',', '')
+        return self.input
 
-# billybill236
-# demig.od
-# champagnepapi
+
 inputUser = input('Enter in your insta Username: ')
-test = Insta_Scrape(inputUser)
 
-test.search_user()
+if inputUser:
+    test = Insta_Scrape(inputUser)
+    test.search_user()
+else:
+    print('... please enter a user name ...')
+    
