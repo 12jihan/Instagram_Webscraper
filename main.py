@@ -1,9 +1,12 @@
 from bs4 import BeautifulSoup
+
 import urllib.request as ureq
 import urllib.parse as uparse
 import urllib.error as uerror
+
 import requests
 import json
+import re
 
 # user = "demig.od"
 # x = ureq.urlopen('https://www.instagram.com/'+user).read()
@@ -36,6 +39,9 @@ class Insta_Scrape:
         self.posts = 0
         self.user_link = self.insta_url + self.user
 
+    def __remCom__(self, input):
+        self.input = input.replace(',', '')
+        return self.input
 
     def search_user(self):
         self.req_url = ureq.urlopen(self.user_link).read()
@@ -43,10 +49,11 @@ class Insta_Scrape:
         self.data = self.soup.find_all('meta', attrs={'property': 'og:description'})
         self.text = self.data[0].get('content').split()
         
+
         self.username = self.text
-        self.followers = self.text[0]
-        self.following = self.text[2]
-        self.posts = self.text[4]
+        self.followers = int(self.__remCom__(self.text[0]))
+        self.following = int(self.__remCom__(self.text[2]))
+        self.posts = int(self.__remCom__(self.text[4]))
 
         ##############################
         ##############################
@@ -57,6 +64,7 @@ class Insta_Scrape:
         print('Followers: ', self.followers)
         print('Following: ', self.following)
         print('Posts: ', self.posts)
+
 
 # billybill236
 # demig.od

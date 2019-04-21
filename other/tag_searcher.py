@@ -7,7 +7,7 @@ import ssl
 import re
 import io
 
-hash_tag = "test"
+hash_tag = "flex"
 x = ureq.urlopen('https://www.instagram.com/explore/tags/' + hash_tag).read()
 soup = BeautifulSoup(x, 'html.parser')
 data = str(soup)
