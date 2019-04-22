@@ -2,7 +2,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 
-cred = credentials.Certificate('./ServiceAccountKey.json')
+cred = credentials.Certificate('../keys/ServiceAccountKey.json')
 default_app = firebase_admin.initialize_app(cred)
 
 db = firestore.client()
@@ -11,13 +11,13 @@ db = firestore.client()
 coll_ref = db.collection(u'instaAccts')
 doc_ref = coll_ref.document()
 
-# Add data to the database (firestore)
-# doc_ref.set({
-#     u'username': u'DemiG.od',
-#     u'followers': 1012,
-#     u'following': 627,
-#     u'posts': 0
-# })
+Add data to the database (firestore)
+doc_ref.set({
+    u'username': u'DemiG.od',
+    u'followers': 1012,
+    u'following': 627,
+    u'posts': 0
+})
 
 # Read data from the database (firestore)
 docs = coll_ref.stream()
