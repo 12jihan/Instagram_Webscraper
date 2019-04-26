@@ -8,7 +8,7 @@ from firebase_admin import firestore
 # db = firestore.client()
 
 # # Reference to instaAccts collection and data with in it
-# coll_ref = db.collection(u'instaAccts')
+# coll_ref = db.collection(u'InstaAccts')
 # doc_ref = coll_ref.document()
 
 # # Add data to the database (firestore)
@@ -30,24 +30,25 @@ from firebase_admin import firestore
 # sprint(default_app.name)
 
 class Firebase_DB_Access:
-
-    tag_url = 'https://www.instagram.com/explore/tags'
    
-    cred = credentials.Certificate('../keys/ServiceAccountKey.json')
+    cred = credentials.Certificate('./keys/ServiceAccountKey.json')
     default_app = firebase_admin.initialize_app(cred)
     db = firestore.client()
-
     coll_ref = db.collection(u'instaAccts')
     doc_ref = coll_ref.document()
 
-    
-    __init__(self, hashtag, x, y, z):
-        self.tag_link = tag_url + hashtag
+    # def __init__(self, a, b, c):
 
-    def postData(self):
+    def postData(self, username):
+        self.username = username
+
         doc_ref.set({
-            u'username': u'DemiG.od'
+            u'username': self.username
         })
     
     def readData(self):
         docs = coll_ref.stream()
+        print(self.docs)
+
+fdb = Firebase_DB_Access()
+fdb.postData('demig.od')
