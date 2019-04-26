@@ -61,6 +61,7 @@ class Insta_Scrape:
         print('Following: ', self.following)
         print('Posts: ', self.posts)
 
+    # Removes comma from results
     def __remCom__(self, input):
         self.input = input.replace(',', '')
         return self.input

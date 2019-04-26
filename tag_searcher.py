@@ -39,3 +39,10 @@ for i in re_object:
 # f.write(str(re_object))
 
 print('done!')
+
+class Tag_Searcher:
+    
+    tag_url: 'https://instagram.com/tags/'
+
+    def __init__(self, hastag):
+        
